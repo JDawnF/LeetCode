@@ -8,15 +8,6 @@
  * 这样就能控制访问 A 和 B 两个链表的指针能同时访问到交点。
  **/
 public class pro160 {
-    private class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
 
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         /**
