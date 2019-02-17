@@ -1,3 +1,5 @@
+package linkedlist;
+
 /**
  * @program: leetcode
  * @author: baichen
