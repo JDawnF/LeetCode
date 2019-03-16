@@ -1,4 +1,4 @@
-package tree;
+package tree.digui;
 
 import java.util.LinkedList;
 import java.util.Queue;
