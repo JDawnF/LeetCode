@@ -1,5 +1,7 @@
 package tree.digui;
 
+import tree.TreeNode;
+
 /**
  * @program: leetcode
  * @author: baichen
