@@ -29,6 +29,31 @@ import java.util.Queue;
  * 其实跟之前的遍历是一样的，只是这次先遍历后存入列表，然后再倒序输出
  **/
 public class pro107 {
+    //    解法一
+    public List<List<Integer>> levelOrderBottom1(TreeNode root) {
+        List<List<Integer>> list = new ArrayList<>();
+        if (root == null)
+            return list;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            List<Integer> tempList = new ArrayList<>();
+            while (size > 0) {
+                TreeNode node = queue.poll();
+                tempList.add(node.val);
+                if (node.left != null) queue.add(node.left);
+                if (node.right != null) queue.add(node.right);
+                size--;
+            }
+            list.add(tempList);
+        }
+        List<List<Integer>> res = new ArrayList<>();
+        for (int i = list.size() - 1; i >= 0; i--)
+            res.add(list.get(i));
+        return res;
+    }
+    // 解法二
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
         List<List<Integer>> list = new ArrayList<>();   // 按顺序存放每行数据的列表
         List<Integer> tempList = new ArrayList<>(); // 每一行暂存的列表
