@@ -44,7 +44,8 @@ public class pro22 {
         // 分别存入左右括号,统计左右括号个数
         if (open < max)
             backtrack(ans, cur + "(", open + 1, close, max);
-        if (close < max)
+        // 右边括号小于左边的时候再回溯
+        if (close < open)
             backtrack(ans, cur + ")", open, close + 1, max);
     }
     // 解法二
